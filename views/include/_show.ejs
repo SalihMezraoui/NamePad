@@ -1,0 +1,14 @@
+<% for(var i = 0; i < users.length; i++) { %>
+    <tr>
+        <td><%= users[i].vorname %></td>
+        <td><%= users[i].geschlecht %></td>
+        <td>
+            <a class="btn box-effect add" onclick="addToNotepad('<%= users[i]._id %>')">
+                <span class="colorful-text">
+                    <i class="fas fa-user-plus" title="in den Merkzettel eintragen"></i>
+                </span>
+            </a>
+        </td>        
+    </tr>
+ <% } %>
+

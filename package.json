@@ -1,0 +1,43 @@
+{
+  "type": "module", 
+  "name": "webentapp",
+  "version": "1.0.0",
+  "description": "Web-Entwicklung Hausarbeit im Wintersemester 2023/24",
+  "main": "server.js",
+  
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server/server.js",
+    "compile": "esbuild assets/js/main.js --bundle --minify --outfile=assets/js/bundle.js",
+    "build": "npm run lint && npm run initdb && lessc assets/css/style.less build/css/style.min.css --clean-css='--s1 --advanced' && terser assets/js/bundle.js --compress --output build/js/bundle.min.js && npm start",
+    "initdb": "node server/database/initDB.js",
+    "clean": "rm -rf Build/js/bundle.min.js Build/css/style.min.css node_modules",
+    "lint": "semistandard --ignore '**/node_modules/**' --ignore 'assets/js/bundle*.js'",
+    "debug": "npm run lint && npm run initdb && npm start",
+    "cleardb": "node server/database/deleteDocuments.js"
+  },
+  "keywords": [
+    "Express",
+    "mongodb"
+  ],
+  "author": "Mohammed Salih Mezraoui, Emre Altintas",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "fast-csv": "^4.3.6",
+    "mongoose": "^8.0.3",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.0.2",
+    "syllabificate": "^2.0.3"
+  },
+  "devDependencies": {
+    "esbuild": "^0.19.10",
+    "less-plugin-clean-css": "^1.5.1",
+    "semistandard": "^17.0.0",
+    "terser": "^5.26.0"
+  }
+}
