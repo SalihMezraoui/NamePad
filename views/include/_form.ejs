@@ -1,0 +1,38 @@
+ <!--form handling-->
+            
+ <form action="/" method="POST">
+    <div class="priority-explanation">
+        <p>Hervorgehobene Namen in <span class="highlight-color"><b><u>dieser Farbe </u></b></span> werden priorisiert</p>
+    </div>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>Name <i id="sortIcon" class="fa-solid fa-sort" onclick="sortTable()"></i></th>
+                <th>Geschlecht</th>
+                <th>Aktion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(var i = 0; i < notepads.length; i++) { %>
+                <tr id="row_<%= notepads[i]._id %>" class="<%= notepads[i].priority ? 'priority-row' : '' %>">
+                    <td><%= notepads[i].vorname %></td>
+                    <td><%= notepads[i].geschlecht %></td>
+                    <td>
+                        <a class="btn box-effect remove" onclick="removeFromNotepad('<%= notepads[i]._id %>')">
+                            <span class="colorful-text">
+                                <i class="fas fa-user-times" title="vom Merkzettel entfernen"></i>
+                            </span>
+                        </a>
+                        <a class="btn box-effect remove" onclick="togglePriority('<%= notepads[i]._id %>')">
+                            <span class="colorful-text">
+                                <i class="fas fa-star" title="Prioritize"></i>
+                            </span>
+                        </a>
+                    </td>
+                   
+                </tr>
+             <% } %>
+        </tbody>
+    </table>
+</form>
+<!--/form handling-->

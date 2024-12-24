@@ -1,0 +1,44 @@
+<!--include header-->
+<%- include('include/_header') %>
+<!--/include header-->
+
+  <!--main site-->
+    
+  <main id="site-main">
+    <div class="container">
+        <div class="flex-container">
+            <div class="left-column">
+                <form id="filterForm">
+                    <label for="genderFilter2">Nach Geschlecht filtern:</label>
+                    <select id="genderFilter2" name="gender">
+                        <option value="">Alle</option>
+                        <option value="m">Männlich</option>
+                        <option value="w">Weiblich</option>
+                    </select>
+                </form>
+            </div>
+            <div class="right-column">
+        <div class="navigation-box flex-container justify-between">
+            <div class="filter">
+                <a href="/" class="return-button"><i class="fas fa-arrow-left"></i> Personenliste</a>
+            </div>
+        </div>
+        <h2 class="table-title">Mein Merkzettel</h2>
+       
+
+        <!--include form-->
+            <%- include('include/_form') %>
+        <!--/include form-->
+    </div>
+    </div>
+    </div>
+</main>
+
+ <!--/main site-->
+
+
+
+
+<!--include footer-->
+    <%- include('include/_footer') %>
+<!--/include footer-->

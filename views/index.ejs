@@ -1,0 +1,88 @@
+<!--include header-->
+    <%- include('include/_header') %>
+<!--/include header-->
+
+<!--Main Site-->
+<main id="site-main">
+    <div class="container">
+        <div class="flex-container">
+            <div class="left-column">
+                <form id="filterForm" action="/api/users/filter" method="get">
+                    <label for="genderFilter">Nach Geschlecht filtern:</label>
+                    <select id="genderFilter" name="gender">
+                        <option value="">Alle</option>
+                        <option value="m">Männlich</option>
+                        <option value="w">Weiblich</option>
+                    </select>
+                
+                    <label for="searchInput">Suche nach Name:</label>
+                    <input type="text" id="searchInput" name="search" placeholder="Name eingeben">
+        
+                    <label for="searchInputPrefix">Suche nach Präfix:</label>
+                    <input type="text" id="searchInputPrefix" name="searchPrefix" placeholder="Präfix eingeben">
+        
+                    <label for="searchInputSuffix">Suche nach Suffix:</label>
+                    <input type="text" id="searchInputSuffix" name="searchSuffix" placeholder="Suffix eingeben">
+        
+                    <label for="searchInputNoPrefix">nicht beginnend mit Präfix:</label>
+                    <input type="text" id="searchInputNoPrefix" name="searchNoPrefix" placeholder="Präfix eingeben">
+        
+                    <label for="searchInputNoSuffix">nicht mit Suffix endend:</label>
+                    <input type="text" id="searchInputNoSuffix" name="searchNoSuffix" placeholder="Suffix eingeben">
+        
+                    <label for="syllablesInputFilter">Nach Silben filtern:</label>
+                    <input type="text" id="syllablesInputFilter" name="syllables" placeholder="Silben eingeben">
+        
+                    <label for="limitInput">Anzahl der anzuzeigenden Namen:</label>
+                    <input type="number" id="limitInput" name="limit" min="1" placeholder="Eine Nummer eingeben">
+        
+                
+                    <div class="form-buttons">
+                        <button type="submit">Filter</button>
+                        <button id="resetButton" type="button">Reset</button>
+                    </div>
+                </form>
+            </div>
+            <div class="right-column">
+        <div class="navigation-box flex-container justify-between">
+            <a href="/my-notepad" class ="notepad-button">
+                <span>Mein Merkzettel <i class="fa-regular fa-clipboard"></i></span>
+            </a>
+        </div>
+        <!-- list-names -->
+        <h2 class="table-title">Namensliste</h2>
+        
+
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Name  <i id="sortIcon" class="fa-solid fa-sort" onclick="sortTable()"></i> </th>
+                    <th>Geschlecht</th>
+                    <th>Aktion</th>
+                </tr>
+            </thead>
+            <tbody>
+               <!--include show-->
+                    <%- include('include/_show') %>
+                <!--/include show-->
+            </tbody>
+        </table>
+        <!-- Add a form for filtering -->
+        
+        <div class="flex-container justify-between">
+            <div class="pagination">
+                <button id="prevButton">Vorherige</button>
+                <button id="nextButton">nächste</button>
+                <p>Seite <span id="currentPage"><%= currentPage %></span> von <span id="totalPages"><%= totalPages %></span></p>
+            </div>        
+        </div>
+        </div>
+        
+
+    </div>
+</main>
+<!--/Main Site-->
+
+<!--include footer-->
+    <%- include('include/_footer') %>
+<!--/include footer-->
