@@ -6,10 +6,6 @@
 The application is powered by **Node.js** and **Express** on the server side and uses a modern browser-based client-side application. Persistent data storage is handled by **MongoDB**. Additionally, advanced build tools like **esbuild** and **Less** are used to ensure a streamlined development process.
 
 ## Features
-
-The application is powered by Node.js and Express on the server side and uses a modern browser-based client-side application. Persistent data storage is handled by MongoDB. Additionally, advanced build tools like esbuild and Less are used to ensure a streamlined development process.
-
-## Features
 ### Core Functionalities:
 - **Name Search:**
   - View a list of names in ascending lexicographical order.
