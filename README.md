@@ -55,4 +55,4 @@ The application is powered by **Node.js** and **Express** on the server side and
 For a demonstration of the application, please refer to the **Screenshots** folder in this repository. It contains images that highlight the key features and user interface of the application.
 
 ## Acknowledgments
-- Special thanks to **Christian Bettinger, M. Sc.**, for his guidance on the system architecture and support throughout the project.
+Special thanks to **Christian Bettinger, M. Sc.**, for his guidance on the system architecture and support throughout the project.
